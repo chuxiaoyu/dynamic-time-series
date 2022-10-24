@@ -1,0 +1,1136 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../image/logo.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+    
+    
+      
+        <title>第2章 概率论与统计基础 - Dynamic Time Series 时间序列分析教程</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.cd566b2a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font:"Source Serif Pro";--md-code-font:""}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Dynamic Time Series 时间序列分析教程" class="md-header__button md-logo" aria-label="Dynamic Time Series 时间序列分析教程" data-md-component="logo">
+      
+  <img src="../image/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynamic Time Series 时间序列分析教程
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第2章 概率论与统计基础
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/chuxiaoyu/dynamic-time-series/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Dynamic Time Series 时间序列分析教程" class="md-nav__button md-logo" aria-label="Dynamic Time Series 时间序列分析教程" data-md-component="logo">
+      
+  <img src="../image/logo.png" alt="logo">
+
+    </a>
+    Dynamic Time Series 时间序列分析教程
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/chuxiaoyu/dynamic-time-series/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        前言
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap01-introduction/" class="md-nav__link">
+        第1章 时序分析导论
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          第2章 概率论与统计基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        第2章 概率论与统计基础
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 基本概念
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 离散型随机变量及其分布
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 连续型随机变量及其分布
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 随机变量的分布特征与统计量
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 随机变量的分布特征与统计量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241" class="md-nav__link">
+    2.4.1 数据的分布特征与统计量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242" class="md-nav__link">
+    2.4.2 随机变量期望方差总结
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243" class="md-nav__link">
+    2.4.3 协方差和相关系数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    2.5 独立事件、条件概率、贝叶斯定理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    2.6 大数定理与中心极限定理
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6 大数定理与中心极限定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#261" class="md-nav__link">
+    2.6.1 大数定律
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#262" class="md-nav__link">
+    2.6.2 中心极限定理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27" class="md-nav__link">
+    2.7 参数估计
+  </a>
+  
+    <nav class="md-nav" aria-label="2.7 参数估计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#271" class="md-nav__link">
+    2.7.1 置信区间、置信度
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    2.8 假设检验
+  </a>
+  
+    <nav class="md-nav" aria-label="2.8 假设检验">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#281" class="md-nav__link">
+    2.8.1 定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#282" class="md-nav__link">
+    2.8.2 基本思想
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#283-p-value" class="md-nav__link">
+    2.8.3 p-value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#284" class="md-nav__link">
+    2.8.4 两类错误
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29" class="md-nav__link">
+    2.9 抽样分布
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    本章小结
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    本章参考资料
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          第3章 时序数据处理与分析
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="第3章 时序数据处理与分析" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          第3章 时序数据处理与分析
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap03-import-data/" class="md-nav__link">
+        3.1 载入日期和时间数据
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap03-feature/" class="md-nav__link">
+        3.2 趋势、季节性、平稳性
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          第4章 经典时间序列模型
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="第4章 经典时间序列模型" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          第4章 经典时间序列模型
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap04-AR.md" class="md-nav__link">
+        4.1 自回归模型（AR）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap04-MA.md" class="md-nav__link">
+        4.2 移动平均模型（MA）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap04-ARMA.md" class="md-nav__link">
+        4.3 自回归移动平均模型 （ARMA）
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap05-todo.md" class="md-nav__link">
+        第5章 状态空间模型
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap06-todo.md" class="md-nav__link">
+        第6章 机器学习模型-基础
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap06-todo.md" class="md-nav__link">
+        第7章 机器学习模型-进阶
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap06-todo.md" class="md-nav__link">
+        第8章 案例
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 基本概念
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 离散型随机变量及其分布
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 连续型随机变量及其分布
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 随机变量的分布特征与统计量
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 随机变量的分布特征与统计量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241" class="md-nav__link">
+    2.4.1 数据的分布特征与统计量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242" class="md-nav__link">
+    2.4.2 随机变量期望方差总结
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243" class="md-nav__link">
+    2.4.3 协方差和相关系数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    2.5 独立事件、条件概率、贝叶斯定理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    2.6 大数定理与中心极限定理
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6 大数定理与中心极限定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#261" class="md-nav__link">
+    2.6.1 大数定律
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#262" class="md-nav__link">
+    2.6.2 中心极限定理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27" class="md-nav__link">
+    2.7 参数估计
+  </a>
+  
+    <nav class="md-nav" aria-label="2.7 参数估计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#271" class="md-nav__link">
+    2.7.1 置信区间、置信度
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    2.8 假设检验
+  </a>
+  
+    <nav class="md-nav" aria-label="2.8 假设检验">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#281" class="md-nav__link">
+    2.8.1 定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#282" class="md-nav__link">
+    2.8.2 基本思想
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#283-p-value" class="md-nav__link">
+    2.8.3 p-value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#284" class="md-nav__link">
+    2.8.4 两类错误
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29" class="md-nav__link">
+    2.9 抽样分布
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    本章小结
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    本章参考资料
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/chuxiaoyu/dynamic-time-series/edit/master/docs/chap02-statistics.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="2">第2章 概率论与统计基础<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
+<h2 id="21">2.1 基本概念<a class="headerlink" href="#21" title="Permanent link">&para;</a></h2>
+<p>随机试验；随机变量；概率分布；概率分布函数；概率密度函数；累积分布函数；样本和总体。</p>
+<h2 id="22">2.2 离散型随机变量及其分布<a class="headerlink" href="#22" title="Permanent link">&para;</a></h2>
+<p>根据随机试验的结果数量是否可数，分为离散型随机变量和连续型随机变量。</p>
+<p><strong>0-1分布/伯努利分布</strong></p>
+<ol>
+<li>定义：伯努利分布指的是对于随机变量X有参数为p（0&lt;1&lt;P），它分别以概率p和1-p取1和0为值。ex. 令X表示抛硬币的结果。</li>
+<li>表示：<code>X ~ b( p)</code></li>
+<li>公式：<code>P(X=1) = p, P(X=0) = 1-p, where p in [0,1]</code></li>
+<li>期望与方差：<code>E(X)=p, D(X)=p(1-p)</code></li>
+</ol>
+<p><strong>二项分布/n个重复独立的伯努利分布</strong></p>
+<ol>
+<li>在n次独立重复的伯努利试验中，设每次试验中事件A发生的概率为p。用X表示n重伯努利试验中事件A发生的次数，则X的可能取值为0，1，…，n,且对每一个k（0≤k≤n）,事件{X=k}即为“n次试验中事件A恰好发生k次”，随机变量X的离散概率分布即为二项分布（Binomial Distribution）。</li>
+<li>表示：<code>X ~ b(n, p)</code></li>
+<li>概率函数：<img src="../../../archive/img/bi.jpg" alt="" width="250"></li>
+<li>期望与方差：<code>E(X)=np, D(X)=np(1-p)</code></li>
+</ol>
+<p><strong>几何分布</strong></p>
+<ol>
+<li>定义：几何分布（Geometric distribution）是离散型概率分布。其中一种定义为：在n次伯努利试验中，试验k次才得到第一次成功的机率。详细地说，是：前k-1次皆失败，第k次成功的概率。</li>
+<li>表示：<code>X ~ g( p)</code></li>
+<li>概率函数：<img src="../../../archive/img/ge.jpg" alt="" width="300"></li>
+<li>期望与方差：<code>E(X)=1/p, D(X)=(1-p)/p^2</code></li>
+</ol>
+<p><strong>泊松分布</strong></p>
+<ol>
+<li>定义：Poisson分布，是一种统计与概率学里常见到的离散概率分布。泊松分布的参数λ是单位时间(或单位面积)内随机事件的平均发生次数。 泊松分布适合于描述单位时间内随机事件发生的次数。</li>
+<li>表示：<code>X ~ p(λ)</code></li>
+<li>概率函数：<img src="../../../archive/img/po.jpg" alt="" width="300"></li>
+<li>期望与方差：<code>E(X)=λ, D(X)=λ</code></li>
+<li>ex. 某一服务设施在一定时间内到达的人数、某网站或APP在单位时间内的访问人数。</li>
+<li>泊松分布与二项分布：当二项分布的n很大而p很小时，泊松分布可作为二项分布的近似，其中λ为np。通常当n≧20,p≦0.05时，就可以用泊松公式近似得计算。</li>
+</ol>
+<h2 id="23">2.3 连续型随机变量及其分布<a class="headerlink" href="#23" title="Permanent link">&para;</a></h2>
+<p><strong>均匀分布</strong></p>
+<ol>
+<li>定义：均匀分布也叫矩形分布，它是对称概率分布，在相同长度间隔的分布概率是等可能的。 均匀分布由两个参数a和b定义，它们是数轴上的最小值和最大值，通常缩写为U（a，b）。</li>
+<li>表示：<code>X ~ u(a,b)</code></li>
+<li>概率密度函数：<img src="../../../archive/img/uni.jpg" alt="" width="250"></li>
+<li>累积分布函数：<img src="../../../archive/img/uni2.jpg" alt="" width="250"></li>
+<li>期望和方差：<code>E(X)=(a+b)/2, D(X)=(a-b)^2/12</code></li>
+</ol>
+<p><strong>正态分布/高斯分布</strong></p>
+<ol>
+<li>定义：若随机变量X服从一个数学期望为μ、方差为σ^2的正态分布，记为<code>N(μ，σ^2)</code>。其概率密度函数为正态分布的期望值μ决定了其位置，其标准差σ决定了分布的幅度。当μ = 0,σ = 1时的正态分布是标准正态分布。</li>
+<li>表示：<code>N(μ，σ^2)</code></li>
+<li>标准化变换：<img src="../../../archive/img/normal.jpg" alt="" width="350"></li>
+<li>概率分布函数：<img src="../../../archive/img/normal2.jpg" alt="" width="300"></li>
+<li>期望和方差：<code>E(X)=μ，D(X)=σ^2</code></li>
+<li>性质：<img src="../../../archive/img/normal3.jpg" alt="" width="800"></li>
+</ol>
+<p><strong>指数分布</strong></p>
+<ol>
+<li>定义：在概率理论和统计学中，指数分布（也称为负指数分布）是描述泊松过程中的事件之间的时间的概率分布，即事件以恒定平均速率连续且独立地发生的过程。</li>
+<li><code>X ~ E(λ)</code> 其中λ &gt; 0是分布的一个参数，常被称为率参数（rate parameter）。即每单位时间内发生某事件的次数。指数分布的区间是[0,∞)。</li>
+<li>概率密度函数：<img src="../../../archive/img/e.jpeg" alt="" width="200"></li>
+<li>累积分布函数：<img src="../../../archive/img/e2.png" alt="" width="250"></li>
+<li>期望和方差：<code>E(X)=1/λ, D(X)=1/λ^2</code></li>
+</ol>
+<h2 id="24">2.4 随机变量的分布特征与统计量<a class="headerlink" href="#24" title="Permanent link">&para;</a></h2>
+<h3 id="241">2.4.1 数据的分布特征与统计量<a class="headerlink" href="#241" title="Permanent link">&para;</a></h3>
+<p><img src="../../../archive/img/feature.jpg" alt="" width="500"></p>
+<h3 id="242">2.4.2 随机变量期望方差总结<a class="headerlink" href="#242" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>随机变量</th>
+<th>表示</th>
+<th>期望</th>
+<th>方差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-1分布</td>
+<td><code>X ~ b( p)</code></td>
+<td><code>E(X)=p</code></td>
+<td><code>D(X)=p(1-p)</code></td>
+</tr>
+<tr>
+<td>二项分布</td>
+<td><code>X ~ b(n, p)</code></td>
+<td><code>E(X)=np</code></td>
+<td><code>D(X)=np(1-p)</code></td>
+</tr>
+<tr>
+<td>几何分布</td>
+<td><code>X ~ g( p)</code></td>
+<td><code>E(X)=1/p</code></td>
+<td><code>D(X)=(1-p)/p^2</code></td>
+</tr>
+<tr>
+<td>泊松分布</td>
+<td><code>X ~ p(λ)</code></td>
+<td><code>E(X)=λ</code></td>
+<td><code>D(X)=λ</code></td>
+</tr>
+<tr>
+<td>均匀分布</td>
+<td><code>X ~ u(a,b)</code></td>
+<td><code>E(X)=(a+b)/2</code></td>
+<td><code>D(X)=(a-b)^2/12</code></td>
+</tr>
+<tr>
+<td>正态分布</td>
+<td><code>N(μ，σ^2)</code></td>
+<td><code>E(X)=μ</code></td>
+<td><code>D(X)=σ^2</code></td>
+</tr>
+<tr>
+<td>指数分布</td>
+<td><code>X ~ E(λ)</code></td>
+<td><code>E(X)=1/λ</code></td>
+<td><code>D(X)=1/λ^2</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="243">2.4.3 <strong>协方差和相关系数</strong><a class="headerlink" href="#243" title="Permanent link">&para;</a></h3>
+<p><strong>协方差</strong>
+协方差（Covariance）在概率论和统计学中用于衡量两个变量的总体误差。而方差是协方差的一种特殊情况，即当两个变量是相同的情况。协方差表示的是两个变量的总体的误差。
+<a href="https://baike.baidu.com/item/%E5%8D%8F%E6%96%B9%E5%B7%AE">https://baike.baidu.com/item/协方差</a></p>
+<p><strong>相关系数</strong>
+相关关系是一种非确定性的关系，相关系数是研究变量之间线性相关程度的量。相关系数是最早由统计学家卡尔·皮尔逊设计的统计指标，是研究变量之间线性相关程度的量，一般用字母 r 表示。由于研究对象的不同，相关系数有多种定义方式，较为常用的是皮尔逊相关系数。
+<a href="https://baike.baidu.com/item/%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0">https://baike.baidu.com/item/相关系数</a></p>
+<h2 id="25">2.5 独立事件、条件概率、贝叶斯定理<a class="headerlink" href="#25" title="Permanent link">&para;</a></h2>
+<p><strong>独立事件</strong></p>
+<p>独立事件：两个事件不论哪一个事件发生都不影响另一个发生的概率。
+A和B是独立的, 当且仅当: <code>P(AB) = P(A)P(B)</code></p>
+<p><strong>条件概率</strong></p>
+<p>条件概率：当事件B已经发生时，事件A发生的概率。
+事件B发生条件下事件A发生的概率为: <code>P(A|B) = P(AB)/P(B)</code>
+概率的乘法公式: <code>P(AB) = P(A|B)P(B) = P(B|A)P(A)</code></p>
+<p><strong>全概率公式</strong></p>
+<p><code>P(B) = ∑P(B|Ai)P(Ai)，i=1,2,...,k</code></p>
+<p><strong>贝叶斯定理</strong></p>
+<p><img src="../../../archive/img/bys.jpg" alt="" width="300">
+通常P(Ai)为A的先验概率，P(Ai|B)为A的后验概率。</p>
+<h2 id="26">2.6 大数定理与中心极限定理<a class="headerlink" href="#26" title="Permanent link">&para;</a></h2>
+<h3 id="261">2.6.1 <strong>大数定律</strong><a class="headerlink" href="#261" title="Permanent link">&para;</a></h3>
+<p>大数定律：将随机变量X所对应的随机试验重复多次，随着试验次数的增加，X的均值会愈发趋近于E(X)。或当样本数据无限大时，样本均值趋于总体均值。</p>
+<h3 id="262">2.6.2 <strong>中心极限定理</strong><a class="headerlink" href="#262" title="Permanent link">&para;</a></h3>
+<p>中心极限定理（central limit theorem）:设从均值为μ、方差为o2 （有限）的任意一个总体中抽取样本量为n的样本，当n充分大时，样本均值X的抽样分布近似服从均值为μ、方差为o2/n的正态分布。</p>
+<h2 id="27">2.7 参数估计<a class="headerlink" href="#27" title="Permanent link">&para;</a></h2>
+<h3 id="271">2.7.1 <strong>置信区间、置信度</strong><a class="headerlink" href="#271" title="Permanent link">&para;</a></h3>
+<p>在区间估计中，由样本统计量所构造的总体参数的估计区间称为**置信区间（confidence interval）<strong>，其中区间的最小值称为置信下限，最大值称为置信上限。由于统计学家在某种程度上确信这个区间会包含真正的总体参数，所以给它取名为置信区间。原因是，如果抽取了许多不同的样本，比如说抽取100个样本，根据每一个样本构造一个置信区间，这样，由100个样本构造的总体参数的100个置信区间中，有95%的区间包含了总体参数的真值，而5%则没包含，则95%这个值称为置信水平。一 般地，如果将构造置信区间的步骤重复多次，置信区间中包含总体参数真值的次数所占的比例称为**置信水平（ confidence level）</strong>，也称为**置信度**或**置信系数（ confidence coefficient）**。</p>
+<p><strong>评价估计量的标准：1.无偏性 2.有效性 3.一致性</strong></p>
+<h2 id="28">2.8 假设检验<a class="headerlink" href="#28" title="Permanent link">&para;</a></h2>
+<h3 id="281">2.8.1 定义<a class="headerlink" href="#281" title="Permanent link">&para;</a></h3>
+<p>H0: 原假设
+H1: 备择假设</p>
+<p>检验统计量：用于假设检验计算的统计量，基于样本检验统计量的值来接受或者拒绝原假设。在原假设成立的情况下，检验统计量服从一个特定的分布；而在备择假设成立的情况下，则不服从该分布。常用的检验统计量有t统计量、z统计量等。</p>
+<h3 id="282">2.8.2 <strong>基本思想</strong><a class="headerlink" href="#282" title="Permanent link">&para;</a></h3>
+<p>通过证明在原假设成立的前提下，检验统计量出现当前值或者更为极端的值属于“小概率”事件，以此推翻原假设，接受备择假设。</p>
+<h3 id="283-p-value">2.8.3 <strong>p-value</strong><a class="headerlink" href="#283-p-value" title="Permanent link">&para;</a></h3>
+<p>“检验统计量出现当前值或者更为极端的值”的概率就是p-value.将p值与预先设定的显著性水平α进行对比，如果p值小于α，就可以推翻原假设，接受备择假设。</p>
+<h3 id="284">2.8.4 两类错误<a class="headerlink" href="#284" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>没有拒绝H0</th>
+<th>拒绝H0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H0为真</td>
+<td>1-α (正确决策)</td>
+<td>α (弃真错误/第i类错误)</td>
+</tr>
+<tr>
+<td>H0为伪</td>
+<td>β (取伪错误/第ii类错误)</td>
+<td>1-β (正确决策)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="29">2.9 抽样分布<a class="headerlink" href="#29" title="Permanent link">&para;</a></h2>
+<p><strong>z分布</strong>
+z分布：正态分布（Normal distribution）又名高斯分布（Gaussiandistribution），若随机变量X服从一个数学期望为μ、方差为σ2的高斯分布，记为N(μ，σ2)。</p>
+<p><strong>卡方分布</strong>
+若n个相互独立的随机变量ξ₁，ξ₂，...,ξn ，均服从标准正态分布（也称独立同分布于标准正态分布），则这n个服从标准正态分布的随机变量的平方和构成一新的随机变量，其分布规律称为卡方分布（chi-square distribution）。其中参数n称为自由度。卡方分布是由正态分布构造而成的一个新的分布，当自由度很大时，卡方分布近似为正态分布。
+E = n, D = 2n</p>
+<p><strong>t分布</strong>
+t分布:首先要提一句u分布，正态分布（normal distribution）是许多统计方法的理论基础。正态分布的两个参数μ和σ决定了正态分布的位置和形态。为了应用方便，常将一般的正态变 量X通过u变换(X一μ)/σ转化成标准正态变量u， 以使原来各种形态的正态分布都转换为μ=0，σ= 1的标准正态分布（standard normaldistribution） ，亦称u分布。根据中心极限定理，通过抽样模拟试验表明，在正态分布总体中以固定n抽取若干个样本时，样本均数的分布仍服从正态分布，即N (μ， σ)。所以，对样本均数的分布进行u变换，也可变换为标准正态分布N(0,1)
+<strong>由于在实际工作中，往往σ（总体方差）是未知的，常用s （样本方差）作为o的估计值，为了与u变换区别，称为t变换，统计量t值的分布称为t分布。</strong></p>
+<p><strong>F分布</strong>
+<img src="../../../archive/img/F.jpg" alt="" width="700"></p>
+<h2 id="_1">本章小结<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_2">本章参考资料<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>[1]《统计学完全教程》第一版 L.沃塞曼 <a href="https://item.jd.com/11883764.html">https://item.jd.com/11883764.html</a></p>
+<p>[2]《统计学》第六版 贾俊平 <a href="https://item.jd.com/14646856811.html">https://item.jd.com/14646856811.html</a></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../chap01-introduction/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第1章 时序分析导论" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              第1章 时序分析导论
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../chap03-import-data/" class="md-footer__link md-footer__link--next" aria-label="Next: 3.1 载入日期和时间数据" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              3.1 载入日期和时间数据
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2022 by <a href="https://chuxiaoyu.cn/" target="_blank">Xiaoyu Chu</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1514a9a0.min.js"></script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
