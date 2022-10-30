@@ -16,6 +16,12 @@ h3 {
   margin-top:25px;     # 二级标题顶边距为25px
   margin-bottom:20px;  # 二级标题底边距为20px
 }
+h4 {
+  font-family: "Microsoft YaHei","宋体","sans-serif"; 
+  font-size:14pt;      # 二级标题的字体大小为17pt
+  margin-top:25px;     # 二级标题顶边距为25px
+  margin-bottom:20px;  # 二级标题底边距为20px
+}
 
 p {
   font-family: "Microsoft YaHei","宋体","sans-serif"; # 段落的字体

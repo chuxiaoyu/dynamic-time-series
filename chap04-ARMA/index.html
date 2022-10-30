@@ -8,19 +8,19 @@
       
       
       
-      <link rel="icon" href="image/logo.png">
+      <link rel="icon" href="../image/logo.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
     
     
       
-        <title>Dynamic Time Series 时间序列分析教程</title>
+        <title>4.3 ARMA模型 - Dynamic Time Series 时间序列分析教程</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.f7951f6f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7951f6f.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -38,9 +38,9 @@
       
     
     
-      <link rel="stylesheet" href="css/extra.css">
+      <link rel="stylesheet" href="../css/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,11 +63,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -78,9 +73,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Dynamic Time Series 时间序列分析教程" class="md-header__button md-logo" aria-label="Dynamic Time Series 时间序列分析教程" data-md-component="logo">
+    <a href=".." title="Dynamic Time Series 时间序列分析教程" class="md-header__button md-logo" aria-label="Dynamic Time Series 时间序列分析教程" data-md-component="logo">
       
-  <img src="image/logo.png" alt="logo">
+  <img src="../image/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -96,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              前言
+              4.3 ARMA模型
             
           </span>
         </div>
@@ -175,9 +170,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Dynamic Time Series 时间序列分析教程" class="md-nav__button md-logo" aria-label="Dynamic Time Series 时间序列分析教程" data-md-component="logo">
+    <a href=".." title="Dynamic Time Series 时间序列分析教程" class="md-nav__button md-logo" aria-label="Dynamic Time Series 时间序列分析教程" data-md-component="logo">
       
-  <img src="image/logo.png" alt="logo">
+  <img src="../image/logo.png" alt="logo">
 
     </a>
     Dynamic Time Series 时间序列分析教程
@@ -203,135 +198,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          前言
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         前言
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    项目简介
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    立项理由
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    项目受众
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    项目亮点
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    项目规划
-  </a>
-  
-    <nav class="md-nav" aria-label="项目规划">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1. 目录
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2. 各章节负责人
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3. 各章节预估完成日期
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4. 写作规范
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    项目贡献者
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    参考资料
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    项目更新日志
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -344,7 +215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chap01-introduction/" class="md-nav__link">
+      <a href="../chap01-introduction/" class="md-nav__link">
         第1章 时序分析导论
       </a>
     </li>
@@ -359,7 +230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chap02-statistics/" class="md-nav__link">
+      <a href="../chap02-statistics/" class="md-nav__link">
         第2章 概率论与统计基础
       </a>
     </li>
@@ -400,7 +271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chap03-data-process/" class="md-nav__link">
+      <a href="../chap03-data-process/" class="md-nav__link">
         3.1 载入日期和时间数据
       </a>
     </li>
@@ -414,7 +285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chap03-data-analysis/" class="md-nav__link">
+      <a href="../chap03-data-analysis/" class="md-nav__link">
         3.2 确定性因素分解
       </a>
     </li>
@@ -434,12 +305,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -462,7 +335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chap04-AR/" class="md-nav__link">
+      <a href="../chap04-AR/" class="md-nav__link">
         4.1 AR模型
       </a>
     </li>
@@ -476,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chap04-MA/" class="md-nav__link">
+      <a href="../chap04-MA/" class="md-nav__link">
         4.2 MA模型
       </a>
     </li>
@@ -488,11 +361,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="chap04-ARMA/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         4.3 ARMA模型
       </a>
+      
     </li>
   
 
@@ -504,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chap04-ARIMA/" class="md-nav__link">
+      <a href="../chap04-ARIMA/" class="md-nav__link">
         4.4 ARIMA模型
       </a>
     </li>
@@ -526,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chap05-todo/" class="md-nav__link">
+      <a href="../chap05-todo/" class="md-nav__link">
         第5章 状态空间模型
       </a>
     </li>
@@ -567,7 +448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chap06-todo.md" class="md-nav__link">
+      <a href="../chap06-todo.md" class="md-nav__link">
         6.1 LR
       </a>
     </li>
@@ -581,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chap06-todo.md" class="md-nav__link">
+      <a href="../chap06-todo.md" class="md-nav__link">
         6.2 贝叶斯模型
       </a>
     </li>
@@ -595,7 +476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chap06-todo.md" class="md-nav__link">
+      <a href="../chap06-todo.md" class="md-nav__link">
         6.3 NN, CNN
       </a>
     </li>
@@ -609,7 +490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chap06-todo.md" class="md-nav__link">
+      <a href="../chap06-todo.md" class="md-nav__link">
         6.4 RNN, LSTM
       </a>
     </li>
@@ -623,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chap06-gnn/" class="md-nav__link">
+      <a href="../chap06-gnn/" class="md-nav__link">
         6.5 GNN
       </a>
     </li>
@@ -671,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chap07-todo.md" class="md-nav__link">
+      <a href="../chap07-todo.md" class="md-nav__link">
         7.1 Transformer
       </a>
     </li>
@@ -685,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chap07-todo.md" class="md-nav__link">
+      <a href="../chap07-todo.md" class="md-nav__link">
         7.2 Diffusion Model
       </a>
     </li>
@@ -707,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chap08-todo.md" class="md-nav__link">
+      <a href="../chap08-todo.md" class="md-nav__link">
         第8章 时间序列在不同领域的应用
       </a>
     </li>
@@ -721,270 +602,19 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    项目简介
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    立项理由
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    项目受众
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    项目亮点
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    项目规划
-  </a>
-  
-    <nav class="md-nav" aria-label="项目规划">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1. 目录
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2. 各章节负责人
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3. 各章节预估完成日期
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4. 写作规范
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    项目贡献者
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    参考资料
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    项目更新日志
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/chuxiaoyu/dynamic-time-series/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/chuxiaoyu/dynamic-time-series/edit/master/docs/chap04-ARMA.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="_1">前言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">项目简介<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>零基础入门时间序列分析教程，含理论与代码，包括统计分析方法和机器学习方法。</p>
-<h2 id="_3">立项理由<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>🐳该课程旨在完善Datawhale数据分析与挖掘方向的课程体系。</p>
-<p>时间序列是一组按照时间顺序排列的离散序列，是日常生活中最常见的数据形式之一。时间序列分析与预测也是机器学习、数据挖掘的一个重要应用方向。本教程希望能够帮助学习者系统了解时序分析的基础知识，学会使用不同统计与机器学习方法进行时间序列的建模与应用。</p>
-<h2 id="_4">项目受众<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<ul>
-<li>想要零基础入门时序分析的同学</li>
-<li>想要学习使用机器学习处理时序数据的同学</li>
-<li>希望将时序分析方法应用到对应领域的非计算机专业的同学</li>
-<li>其他对时间序列分析感兴趣的同学</li>
-</ul>
-<h2 id="_5">项目亮点<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<ul>
-<li>针对零基础学习者系统性介绍时序分析</li>
-<li>理论与实战代码相结合，通俗易懂</li>
-<li>加入机器学习、深度学习在时序分析的应用</li>
-<li>与Datawhale的其他数据分析、机器学习课程联系紧密，互相补充</li>
-</ul>
-<h2 id="_6">项目规划<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<h3 id="1">1. 目录<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<p>见左侧边栏。</p>
-<h3 id="2">2. 各章节负责人<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<p>见【项目贡献者】。</p>
-<h3 id="3">3. 各章节预估完成日期<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>章节进度</th>
-<th>计划完成时间</th>
-<th>状态</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>第1-2章 样章</td>
-<td>2022-10-31</td>
-<td>已完成</td>
-</tr>
-<tr>
-<td>第3-7章 大纲（包括逻辑清晰的章节目录、内容框架、参考文献等）</td>
-<td>2022-11-30</td>
-<td>进行中</td>
-</tr>
-<tr>
-<td>第3-7章 样章（包括结构完整的、可流畅阅读的主体内容）</td>
-<td>2022-12-31</td>
-<td>TODO</td>
-</tr>
-</tbody>
-</table>
-<h3 id="4">4. 写作规范<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
-<ol>
-<li>文本用Markdown，公式用latex编辑（不要截图）</li>
-<li>每章节后列出参考文献，图片标注出处、尽量去掉水印</li>
-<li>标题格式：a.b.c （a, b, c ∈ N），标点符号格式：中文全角</li>
-<li>编程语言：Python</li>
-</ol>
-<h2 id="_7">项目贡献者<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>成员</th>
-<th>个人简介</th>
-<th>项目贡献</th>
-<th>主页</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Xiaoyu Chu</td>
-<td>VU Amsterdam博士生</td>
-<td>项目负责人，第1-3章</td>
-<td>[<a href="www.chuxiaoyu.cn">主页</a>] [<a href="https://github.com/chuxiaoyu">GitHub</a>] [<a href="./image/xchu.jpeg" target="_blank" >微信</a>]</td>
-</tr>
-<tr>
-<td>🧐</td>
-<td></td>
-<td>第4章：MA, ARIMA</td>
-<td></td>
-</tr>
-<tr>
-<td>黑桃</td>
-<td></td>
-<td>第4章：AR, ARMA</td>
-<td></td>
-</tr>
-<tr>
-<td>陈心嫣（小贝）</td>
-<td></td>
-<td>第5章：状态空间模型</td>
-<td></td>
-</tr>
-<tr>
-<td>黄辉友（Luffy）</td>
-<td>风险数据分析师</td>
-<td>第6章：LR, 贝叶斯, 决策树</td>
-<td></td>
-</tr>
-<tr>
-<td>王瀚翀</td>
-<td>华东师范大学硕士生</td>
-<td>第6章：NN, CNN</td>
-<td></td>
-</tr>
-<tr>
-<td>王瑞楠<br />刘大伟</td>
-<td><br />中国科学院大学硕士生</td>
-<td>第6章：RNN, LSTM</td>
-<td></td>
-</tr>
-<tr>
-<td>王茂霖</td>
-<td></td>
-<td>第7章：Transformer</td>
-<td></td>
-</tr>
-<tr>
-<td>管桑田</td>
-<td>澳门科技大学硕士生</td>
-<td>第7章：Diffusion Model</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="_8">参考资料<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p>[1] Datawhale时间序列分析 <a href="https://github.com/datawhalechina/team-learning-data-mining/tree/master/TimeSeries">https://github.com/datawhalechina/team-learning-data-mining/tree/master/TimeSeries</a></p>
-<p>[2] Datawhale天池”AI Earth“气象海洋预测 <a href="https://github.com/datawhalechina/time-series-learning">https://github.com/datawhalechina/time-series-learning</a></p>
-<p>[3] 南京大学Lambda-时间序列分析 <a href="https://www.lamda.nju.edu.cn/yehj/timeseries2021/?AspxAutoDetectCookieSupport=1">https://www.lamda.nju.edu.cn/yehj/timeseries2021/?AspxAutoDetectCookieSupport=1</a></p>
-<p>[4] Practical Time Series Analysis Prediction with Statistics &amp; Machine Learning <a href="https://b-ok.cc/book/5336102/85751e">https://b-ok.cc/book/5336102/85751e</a> </p>
-<p>[5] 中文笔记：Time Series 101 <a href="https://github.com/skywateryang/timeseries101">https://github.com/skywateryang/timeseries101</a></p>
-<p>[6] 微信公众号：AI蜗牛车</p>
-<p>[7] Everything you can do with a time series <a href="https://www.kaggle.com/code/thebrownviking20/everything-you-can-do-with-a-time-series/comments">https://www.kaggle.com/code/thebrownviking20/everything-you-can-do-with-a-time-series/comments</a></p>
-<p>[8] 北京大学李东风-应用时间序列分析 <a href="https://www.math.pku.edu.cn/teachers/lidf/course/atsa/atsanotes/html/_atsanotes/index.html#%E8%AF%BE%E7%A8%8B%E5%86%85%E5%AE%B9">https://www.math.pku.edu.cn/teachers/lidf/course/atsa/atsanotes/html/_atsanotes/index.html#%E8%AF%BE%E7%A8%8B%E5%86%85%E5%AE%B9</a></p>
-<h2 id="_9">项目更新日志<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<p><em>2022-10-31: 第1-3章 样章，项目成员招募、任务分配</em> </p>
-<p><em>2022-09-26: 立项申请</em></p>
+  <h1>4.3 ARMA模型</h1>
+
+
 
               
             </article>
@@ -997,15 +627,30 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
+        
+        <a href="../chap04-MA/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4.2 MA模型" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              4.2 MA模型
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="chap01-introduction/" class="md-footer__link md-footer__link--next" aria-label="Next: 第1章 时序分析导论" rel="next">
+        <a href="../chap04-ARIMA/" class="md-footer__link md-footer__link--next" aria-label="Next: 4.4 ARIMA模型" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              第1章 时序分析导论
+              4.4 ARIMA模型
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1039,12 +684,12 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
     
     
-      <script src="assets/javascripts/bundle.649a939e.min.js"></script>
+      <script src="../assets/javascripts/bundle.649a939e.min.js"></script>
       
-        <script src="js/extra.js"></script>
+        <script src="../js/extra.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
